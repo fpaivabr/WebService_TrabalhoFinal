@@ -34,10 +34,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario updateUsuario(Long id, Usuario usuarioDetails) {
         Usuario usuario = getUsuarioById(id);
-        usuario.setNomeUsuario(usuarioDetails.getNomeUsuario());
-        usuario.setSobrenomeUsuario(usuarioDetails.getSobrenomeUsuario());
-        usuario.setDescricaoUsuario(usuarioDetails.getDescricaoUsuario());
-        usuario.setSenhaUsuario(usuarioDetails.getSenhaUsuario());
+        usuario.setNome(usuarioDetails.getNome());
+        usuario.setSobrenome(usuarioDetails.getSobrenome());
+        usuario.setDescricao(usuarioDetails.getDescricao());
+        usuario.setSenha(usuarioDetails.getSenha());
         return usuarioRepository.save(usuario);
     }
 

@@ -1,6 +1,5 @@
 package com.fernando_larissa.web_service.model;
 
-
 import jakarta.persistence.*;
 
 @Entity

@@ -1,7 +1,6 @@
 package com.fernando_larissa.web_service.service;
 
 import com.fernando_larissa.web_service.model.Feedback;
-
 import java.util.List;
 
 public interface FeedbackService {

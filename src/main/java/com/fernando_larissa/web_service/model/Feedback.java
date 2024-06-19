@@ -1,7 +1,6 @@
 package com.fernando_larissa.web_service.model;
 
 import jakarta.persistence.*;
-
 import java.util.Date;
 
 @Entity
@@ -10,59 +9,83 @@ public class Feedback {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_feedback;
+    private Long id;
 
-    @Column(name = "titulo_feedback", nullable = false)
-    private String tituloFeedback;
+    @Column(name = "titulo", nullable = false)
+    private String titulo;
 
-    @Column(name = "descricao_feedback")
-    private String descricaoFeedback;
+    @Column(name = "descricao")
+    private String descricao;
 
-    @Column(name = "data_feedback", nullable = false)
-    private Date dataFeedback;
+    @Column(name = "data", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date data;
 
-    @Column(name = "status_feedback", nullable = false)
-    private String statusFeedback;
+    @Column(name = "status", nullable = false)
+    private String status;
 
-    // Getters and Setters
+    @Column(name = "resposta")
+    private String resposta; // Novo campo para resposta
 
-    public Long getId_feedback() {
-        return id_feedback;
+    @ManyToOne
+    @JoinColumn(name = "item_cardapio_id")
+    private ItemCardapio itemCardapio;
+
+    // Getters e Setters
+
+    public Long getId() {
+        return id;
     }
 
-    public void setId_feedback(Long id_feedback) {
-        this.id_feedback = id_feedback;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getTituloFeedback() {
-        return tituloFeedback;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setTituloFeedback(String tituloFeedback) {
-        this.tituloFeedback = tituloFeedback;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getDescricaoFeedback() {
-        return descricaoFeedback;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescricaoFeedback(String descricaoFeedback) {
-        this.descricaoFeedback = descricaoFeedback;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public Date getDataFeedback() {
-        return dataFeedback;
+    public Date getData() {
+        return data;
     }
 
-    public void setDataFeedback(Date dataFeedback) {
-        this.dataFeedback = dataFeedback;
+    public void setData(Date data) {
+        this.data = data;
     }
 
-    public String getStatusFeedback() {
-        return statusFeedback;
+    public String getStatus() {
+        return status;
     }
 
-    public void setStatusFeedback(String statusFeedback) {
-        this.statusFeedback = statusFeedback;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getResposta() {
+        return resposta;
+    }
+
+    public void setResposta(String resposta) {
+        this.resposta = resposta;
+    }
+
+    public ItemCardapio getItemCardapio() {
+        return itemCardapio;
+    }
+
+    public void setItemCardapio(ItemCardapio itemCardapio) {
+        this.itemCardapio = itemCardapio;
     }
 }

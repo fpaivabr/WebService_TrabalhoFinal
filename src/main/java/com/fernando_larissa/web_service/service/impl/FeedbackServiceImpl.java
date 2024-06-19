@@ -27,7 +27,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 
     @Override
     public List<Feedback> getFeedbacksByStatus(String status) {
-        return feedbackRepository.findByStatusFeedback(status);
+        return feedbackRepository.findByStatus(status);
     }
 
     @Override
@@ -39,10 +39,11 @@ public class FeedbackServiceImpl implements FeedbackService {
     @Override
     public Feedback updateFeedback(Long id, Feedback feedbackDetails) {
         Feedback feedback = getFeedbackById(id);
-        feedback.setTituloFeedback(feedbackDetails.getTituloFeedback());
-        feedback.setDescricaoFeedback(feedbackDetails.getDescricaoFeedback());
-        feedback.setDataFeedback(feedbackDetails.getDataFeedback());
-        feedback.setStatusFeedback(feedbackDetails.getStatusFeedback());
+        feedback.setTitulo(feedbackDetails.getTitulo());
+        feedback.setDescricao(feedbackDetails.getDescricao());
+        feedback.setData(feedbackDetails.getData());
+        feedback.setStatus(feedbackDetails.getStatus());
+        feedback.setResposta(feedbackDetails.getResposta());
         return feedbackRepository.save(feedback);
     }
 

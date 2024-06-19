@@ -1,5 +1,6 @@
 package com.fernando_larissa.web_service.service.impl;
 
+import com.fernando_larissa.web_service.exception.ResourceNotFoundException;
 import com.fernando_larissa.web_service.model.Atividade;
 import com.fernando_larissa.web_service.repository.AtividadeRepository;
 import com.fernando_larissa.web_service.service.AtividadeService;
@@ -18,6 +19,11 @@ public class AtividadeServiceImpl implements AtividadeService {
     @Override
     public List<Atividade> getAllAtividades() {
         return atividadeRepository.findAll();
+    }
+
+    @Override
+    public List<Atividade> getAtividadesByStatus(String status) {
+        return atividadeRepository.findByStatus(status);
     }
 
     @Override
@@ -40,11 +46,11 @@ public class AtividadeServiceImpl implements AtividadeService {
         Optional<Atividade> atividadeOptional = atividadeRepository.findById(id);
         if (atividadeOptional.isPresent()) {
             Atividade atividade = atividadeOptional.get();
-            atividade.setTituloAtividade(atividadeDetails.getTituloAtividade());
-            atividade.setDescricaoAtividade(atividadeDetails.getDescricaoAtividade());
-            atividade.setDataAtividade(atividadeDetails.getDataAtividade());
-            atividade.setStatusAtividade(atividadeDetails.getStatusAtividade());
-            atividade.setAcaoRealizada(atividadeDetails.getAcaoRealizada());
+            atividade.setTitulo(atividadeDetails.getTitulo());
+            atividade.setDescricao(atividadeDetails.getDescricao());
+            atividade.setData(atividadeDetails.getData());
+            atividade.setStatus(atividadeDetails.getStatus());
+            atividade.setAcao(atividadeDetails.getAcao());
             return atividadeRepository.save(atividade);
         }
         return null;

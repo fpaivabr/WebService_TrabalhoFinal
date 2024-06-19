@@ -17,7 +17,10 @@ public class AtividadeController {
     private AtividadeService atividadeService;
 
     @GetMapping
-    public List<Atividade> getAllAtividades() {
+    public List<Atividade> getAllAtividades(@RequestParam(required = false) String status) {
+        if (status != null) {
+            return atividadeService.getAtividadesByStatus(status);
+        }
         return atividadeService.getAllAtividades();
     }
 

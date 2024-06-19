@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface AtividadeService {
     List<Atividade> getAllAtividades();
+    List<Atividade> getAtividadesByStatus(String status);
     Optional<Atividade> getAtividadeById(Long id);
     Atividade saveAtividade(Atividade atividade);
     void deleteAtividade(Long id);

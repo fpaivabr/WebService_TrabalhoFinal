@@ -27,7 +27,7 @@ public class ItemCardapioServiceImpl implements ItemCardapioService {
 
     @Override
     public List<ItemCardapio> getItemCardapiosByTipo(String tipo) {
-        return itemCardapioRepository.findByTipoItemCardapio(tipo);
+        return itemCardapioRepository.findByTipo(tipo);
     }
 
     @Override

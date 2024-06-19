@@ -1,79 +1,90 @@
 package com.fernando_larissa.web_service.model;
 
 import jakarta.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "atividade")
 public class Atividade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAtividade;
+    private Long id;
 
-    @Column(name = "titulo_atividade")
-    private String tituloAtividade;
+    @Column(name = "titulo", nullable = false)
+    private String titulo;
 
-    @Column(name = "descricao_atividade")
-    private String descricaoAtividade;
+    @Column(name = "descricao")
+    private String descricao;
 
-    @Column(name = "data_atividade")
-    private String dataAtividade;
+    @Column(name = "data", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date data;
 
-    @Column(name = "status_atividade")
-    private String statusAtividade;
+    @Column(name = "status", nullable = false)
+    private String status;
 
-    @Column(name = "acao_realizada")
-    private String acaoRealizada; // Ação realizada
+    @Column(name = "acao")
+    private String acao;
 
-    // Construtor, getters e setters
+    @ManyToOne
+    @JoinColumn(name = "feedback_id")
+    private Feedback feedback;
 
-    public Atividade() {
+    // Getters e Setters
+
+    public Long getId() {
+        return id;
     }
 
-    public Long getIdAtividade() {
-        return idAtividade;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setIdAtividade(Long idAtividade) {
-        this.idAtividade = idAtividade;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public String getTituloAtividade() {
-        return tituloAtividade;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public void setTituloAtividade(String tituloAtividade) {
-        this.tituloAtividade = tituloAtividade;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public String getDescricaoAtividade() {
-        return descricaoAtividade;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public void setDescricaoAtividade(String descricaoAtividade) {
-        this.descricaoAtividade = descricaoAtividade;
+    public Date getData() {
+        return data;
     }
 
-    public String getDataAtividade() {
-        return dataAtividade;
+    public void setData(Date data) {
+        this.data = data;
     }
 
-    public void setDataAtividade(String dataAtividade) {
-        this.dataAtividade = dataAtividade;
+    public String getStatus() {
+        return status;
     }
 
-    public String getStatusAtividade() {
-        return statusAtividade;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public void setStatusAtividade(String statusAtividade) {
-        this.statusAtividade = statusAtividade;
+    public String getAcao() {
+        return acao;
     }
 
-    public String getAcaoRealizada() {
-        return acaoRealizada;
+    public void setAcao(String acao) {
+        this.acao = acao;
     }
 
-    public void setAcaoRealizada(String acaoRealizada) {
-        this.acaoRealizada = acaoRealizada;
+    public Feedback getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(Feedback feedback) {
+        this.feedback = feedback;
     }
 }

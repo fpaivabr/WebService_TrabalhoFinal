@@ -21,13 +21,11 @@ public class FeedbackController {
     }
 
     @GetMapping
-    public List<Feedback> getAllFeedbacks() {
+    public List<Feedback> getAllFeedbacks(@RequestParam(required = false) String status) {
+        if (status != null) {
+            return feedbackService.getFeedbacksByStatus(status);
+        }
         return feedbackService.getAllFeedbacks();
-    }
-
-    @GetMapping("/status/{status}")
-    public List<Feedback> getFeedbacksByStatus(@PathVariable String status) {
-        return feedbackService.getFeedbacksByStatus(status);
     }
 
     @GetMapping("/{id}")

@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface AtividadeRepository extends JpaRepository<Atividade, Long> {
-    List<Atividade> findByStatusAtividade(String status);
+    List<Atividade> findByStatus(String status);
 }
-

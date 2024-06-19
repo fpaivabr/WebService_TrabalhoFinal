@@ -8,59 +8,59 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_usuario;
+    private Long id;
 
-    @Column(name = "nome_usuario", nullable = false)
-    private String nomeUsuario;
+    @Column(name = "nome", nullable = false)
+    private String nome;
 
-    @Column(name = "sobrenome_usuario", nullable = false)
-    private String sobrenomeUsuario;
+    @Column(name = "sobrenome", nullable = false)
+    private String sobrenome;
 
-    @Column(name = "descricao_usuario")
-    private String descricaoUsuario;
+    @Column(name = "descricao")
+    private String descricao;
 
-    @Column(name = "senha_usuario", nullable = false)
-    private String senhaUsuario;
+    @Column(name = "senha", nullable = false)
+    private String senha;
 
-    // Getters and Setters
+    // Getters e Setters
 
-    public Long getId_usuario() {
-        return id_usuario;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNomeUsuario() {
-        return nomeUsuario;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeUsuario(String nomeUsuario) {
-        this.nomeUsuario = nomeUsuario;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getSobrenomeUsuario() {
-        return sobrenomeUsuario;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    public void setSobrenomeUsuario(String sobrenomeUsuario) {
-        this.sobrenomeUsuario = sobrenomeUsuario;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
-    public String getDescricaoUsuario() {
-        return descricaoUsuario;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescricaoUsuario(String descricaoUsuario) {
-        this.descricaoUsuario = descricaoUsuario;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public String getSenhaUsuario() {
-        return senhaUsuario;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setSenhaUsuario(String senhaUsuario) {
-        this.senhaUsuario = senhaUsuario;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
