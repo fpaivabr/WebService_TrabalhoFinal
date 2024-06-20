@@ -36,6 +36,14 @@ public class Usuario {
         this.id_usuario = id_usuario;
     }
 
+    public String getLoginUsuario() {
+        return loginUsuario;
+    }
+
+    public void setLoginUsuario(String loginUsuario) {
+        this.loginUsuario = loginUsuario;
+    }
+
     public String getNomeUsuario() {
         return nomeUsuario;
     }
