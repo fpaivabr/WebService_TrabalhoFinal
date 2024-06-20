@@ -10,6 +10,9 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_usuario;
 
+    @Column(name = "login_usuario", nullable = false)
+    private String loginUsuario;
+
     @Column(name = "nome_usuario", nullable = false)
     private String nomeUsuario;
 
@@ -21,6 +24,7 @@ public class Usuario {
 
     @Column(name = "senha_usuario", nullable = false)
     private String senhaUsuario;
+
 
     // Getters and Setters
 
